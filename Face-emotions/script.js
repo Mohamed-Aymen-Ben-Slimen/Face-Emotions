@@ -10,8 +10,9 @@ function startVideo() {
     stream => video.srcObject = stream,
     err => console.error(err)
   )
-}
 
+
+	
 video.addEventListener('playing', () => {
   const canvas = faceapi.createCanvasFromMedia(video)
   document.body.append(canvas)
@@ -62,6 +63,10 @@ video.addEventListener('playing', () => {
 
   }, 200)
 })
+
+
+}
+
 
 
 
