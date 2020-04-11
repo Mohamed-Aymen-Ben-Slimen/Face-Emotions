@@ -3,12 +3,6 @@ const video = document.getElementById('video')
 console.log(video.width)
 
 
-Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('./models')
-]).then(startVideo)
-
-console.log(faceapi.nets)
 
 function startVideo() {
   navigator.getUserMedia(
@@ -68,3 +62,12 @@ video.addEventListener('playing', () => {
 
   }, 200)
 })
+
+
+
+Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('./models')
+]).then(startVideo)
+
+console.log(faceapi.nets)
