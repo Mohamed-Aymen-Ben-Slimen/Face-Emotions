@@ -13,7 +13,7 @@ function startVideo() {
 
 
 	
-video.addEventListener('playing', () => {
+video.addEventListener('loadeddata', () => {
   const canvas = faceapi.createCanvasFromMedia(video)
   document.body.append(canvas)
   const displaySize = { width: video.width, height: video.height }
@@ -62,6 +62,7 @@ video.addEventListener('playing', () => {
 
 
   }, 200)
+
 })
 
 
@@ -73,6 +74,6 @@ video.addEventListener('playing', () => {
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
     faceapi.nets.faceExpressionNet.loadFromUri('./models')
-]).then(startVideo)
+]).then(startVideo);
 
 console.log(faceapi.nets)
