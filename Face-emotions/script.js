@@ -12,8 +12,9 @@ function startVideo() {
   )
 
 
-	
-video.addEventListener('loadeddata', () => {
+
+    setTimeout( () => {
+//video.addEventListener('canplay', () => {
   const canvas = faceapi.createCanvasFromMedia(video)
   document.body.append(canvas)
   const displaySize = { width: video.width, height: video.height }
@@ -63,7 +64,7 @@ video.addEventListener('loadeddata', () => {
 
   }, 200)
 
-})
+}, 10000)
 
 
 }
