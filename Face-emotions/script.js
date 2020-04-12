@@ -2,7 +2,7 @@ const video = document.getElementById('video')
 
 console.log(video.width)
 
-const start = Date.now();
+
 
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
@@ -14,8 +14,7 @@ console.log(faceapi.nets)
 function startVideo() {
     console.log('video'+ (Date.now() - start))
 
-    const videoStart = document.getElementById('videoStart');
-    videoStart.textContent = 'video '+ (Date.now() - start)
+    
 
   navigator.getUserMedia(
     { video: {} },
@@ -26,10 +25,7 @@ function startVideo() {
 
 }
 
-video.addEventListener('playing', () => { console.log('ready'+ (Date.now() - start));
-    const ready = document.getElementById('ready');
-    ready.textContent = 'ready '+ (Date.now() - start)
-})
+
 
 setTimeout( () => {
 //video.addEventListener('playing', () => {
