@@ -12,7 +12,7 @@ Promise.all([
 console.log(faceapi.nets)
 
 function startVideo() {
-    console.log('video'+ (Date.now() - start))
+   
 
     
 
